@@ -19,6 +19,7 @@ push-rest-image-2:
         apt-get install -y docker-ce
         usermod -a -G docker root
         #docker info
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - internal/docker-build:
         dockerfile: Dockerfile
         image-name: my-image
